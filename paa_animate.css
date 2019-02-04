@@ -20,16 +20,20 @@
 
 
 /* Transition Effects */
+
+/* Positioned links relatively, with color of white and .5s transition. */
 nav#gameLinks a {
     position: relative;
     color: white;
     transition: .5s;
 }
 
+/* On hover change color to orange. */
 nav#gameLinks a:hover {
     color: rgb(255, 194, 99);
 }
 
+/* Create psuedo element after underneath gameLinks. Set gradient. Set width to 0 and opacity to 0. Set transition to .5s. */
 nav#gameLinks a::after {
     content: '';
     position: absolute;
@@ -43,6 +47,7 @@ nav#gameLinks a::after {
     transition: .5s;
 }
 
+/* On hover set opacity to 0 and width to 100%. */
 nav#gameLinks a:hover::after {
     opacity: 1;
     width: 100%;
@@ -50,6 +55,8 @@ nav#gameLinks a:hover::after {
 
 
 /* Sprite Styles */
+
+/* Positoned element to absolute. Set width and position. Position, size, and define a background. Set animation to playSprite with a time of 1s and a 3s delay. Set 33 steps in an infite loop. Set animation of flyRight for 6s with a cubic-bezier in an infite loop. */
 div#butterfly {
     position: absolute;
     width: 35px;
@@ -63,6 +70,7 @@ div#butterfly {
     animation: playSprite 1s 3s steps(33) infinite, flyRight 6s cubic-bezier(0, 1, 0.73, 0) infinite;
 }
 
+/* Positoned element to absolute. Set width and position. Position, size, and define a background. Set animation to playSprite with a time of 2s. Set 39 steps in an infite loop. Set a liner flyRight animation for 6s infinitely. */
 div#bat {
     position: absolute;
     width: 40px;
@@ -76,6 +84,7 @@ div#bat {
     animation: playSprite 2s steps(39) infinite, flyRight 8s linear infinite;
 }
 
+/* Positoned element to absolute. Set width and position. Position, size, and define a background. Set animation to playSprite with a time of 3.5s and a delay of 4s. Set 27 steps in an infite loop. */
 div#fox {
     position: absolute;
     width: 280px;
@@ -92,6 +101,7 @@ div#fox {
 
 /* Animation Styles */
 
+/* At end of playSprite set background position to right center. */
 @keyframes playSprite {
 
     100% {
@@ -99,6 +109,7 @@ div#fox {
     }
 }
 
+/* Set keyframes for flyRight to different top postions over the course of the animation. At the end the element should be all the way to the right of the frame. */
 @keyframes flyRight {
     25% {
         top: 150px;
